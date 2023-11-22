@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description:
     "This is my personal website. Created with Next.js. I'm a Web Developer from Turkey.",
   keywords:
-    "Personal Website, Next.js, Web Development, Ui Design, erenk.fun, portfolio",
+    "personal website, Next.js, web development, ui design, sametcc.me, sametcc, samet can cıncık, portfolio",
   applicationName: "sametcc.me",
-  creator: "https://github.com/sametcn99",
+  creator: "https://github.com/DalgaGamePlay",
 };
 
 const jsonLd: WithContext<Person> = {
@@ -29,7 +29,7 @@ const jsonLd: WithContext<Person> = {
   url: "https://www.erenk.fun/",
   sameAs: [
     "https://www.linkedin.com/in/samet-can-c%C4%B1nc%C4%B1k",
-    "http://instagram.com/sasdasdmetc0",
+    "http://instagram.com/sametc0",
     "https://github.com/sametcn99",
     "https://www.youtube.com/channel/UCgXu7EZ76uMqPW8i4ZCL72Q",
   ],
@@ -52,17 +52,18 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         {/* Define the HTML document with a language attribute set to "en". */}
-        <link rel="shortcut icon" href="https://i.hizliresim.com/epp3u49.png" />
-        <meta property="og:image" content="https://i.hizliresim.com/epp3u49.png" />
-        <meta name="twitter:card" content="https://i.hizliresim.com/epp3u49.png" />
-        <meta property="og:title" content="Eren - Web" />
+        <link rel="shortcut icon" href="/indir.png" />
+        <meta property="og:image" content="/indir.png" />
+        <meta name="twitter:card" content="/indir.png" />
+        <meta property="og:title" content="erenk.me" />
+        <meta property="og:type" content="website" />
         <meta
           property="og:description"
-          content="This İs My personal Website. Created With Next.js. I'm a Web Developer from Turkey."
+          content="This is my personal website. Created with Next.js. I'm a Web Developer from Turkey."
         />
         <meta property="og:url" content="https://www.erenk.fun/" />
-        <meta property="og:site_name" content="Eren - Web" />
-        <meta property="og:locale" content="tr_US" />
+        <meta property="og:site_name" content="erenk.fun" />
+        <meta property="og:locale" content="en_US" />
       </head>
       <body className={inter.className}>
         {/* Set the body class for using the 'Inter' font. */}

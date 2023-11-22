@@ -37,7 +37,7 @@ export default function Buttons() {
           index // Map over the 'socialMediaLinks' array and create a link for each social media entry.
         ) => (
           <motion.a
-            className="m-1" // Apply CSS margin to the link.
+            className="m-1 " // Apply CSS margin to the link.
             key={index} // Set a unique 'key' for React to identify each link element.
             href={socialMedia.link} // Set the 'href' attribute of the link to the social media URL.
             target="_blank" // Open the link in a new browser tab or window.
@@ -47,7 +47,7 @@ export default function Buttons() {
           >
             <Button
               aria-label={socialMedia.label}
-              className="bg-opacity-70"
+              className="bg-opacity-70 !rounded-[5px] mt-[1px]"
             >
               {socialMedia.icon}
             </Button>

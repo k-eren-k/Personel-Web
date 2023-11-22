@@ -22,6 +22,11 @@ type GitHubRepo = {
   created_at: string;
   updated_at: string;
   topics: string[];
+  license_name: string;
+  license_url: string;
+  language: string;
+  license_key: string;
+  license_spdx_id: string;
 };
 // Projects component
 const Projects = () => {
@@ -51,16 +56,16 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="z-10 m-5 space-y-4 text-white select-none">
+    <>
       {Array.isArray(data) &&
         data.map((project, index) => (
           <Card
-            className="bg-opacity-50 hover:scale-105 max-w-[35rem]"
+            className="z-10 my-3 text-white bg-opacity-50 select-none hover:scale-105 max-w-[35rem]"
             key={`${project.id}-${index}`}
           >
             <CardHeader className="justify-between">
               <div className="flex gap-5">
-                <div className="flex flex-row flex-wrap items-center">
+                <div className="flex flex-row flex-wrap items-center rounded-[]">
                   <h1 className="font-semibold leading-none hover:font-bold text-small text-default-600">
                     {project.name}
                   </h1>
@@ -79,7 +84,7 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-              <div className="justify-end  flex flex-wrap  items-center gap-1">
+              <div className="flex flex-wrap gap-1 justify-end items-center">
                 {project.home_page && (
                   <a href={project.home_page} target="_blank">
                     <Button
@@ -91,7 +96,7 @@ const Projects = () => {
                       variant={"bordered"}
                     >
                       Demo
-                      <OpenInNewIcon className="fill-white text-sm" />
+                      <OpenInNewIcon className="text-sm fill-white" />
                     </Button>
                   </a>
                 )}
@@ -105,7 +110,7 @@ const Projects = () => {
                     variant={"bordered"}
                   >
                     Source Code
-                    <GitHubIcon className="fill-white text-sm" />
+                    <GitHubIcon className="text-sm fill-white" />
                   </Button>
                 </a>
               </div>
@@ -114,23 +119,25 @@ const Projects = () => {
               {project.description}
             </CardBody>
             <CardFooter className="flex flex-col gap-3 items-start">
-              <div className="flex flex-row flex-wrap gap-1">
-                <p className="text-left text-default-600 text-small">
+              <div className="flex flex-col flex-wrap gap-1 text-xs text-left item">
+                <p>{project.license_spdx_id}</p>
+                <p>
+                  {project.language ? `Language: ${project.language}` : null}
+                </p>
+                <p>
                   Created at:{" "}
                   {new Date(project.created_at).toLocaleDateString()}
-                  {new Date(project.created_at).toLocaleTimeString()}
                 </p>
-                <p className="text-left text-default-600 text-small">
+                <p>
                   Last update:{" "}
                   {new Date(project.updated_at).toLocaleDateString()}
-                  {new Date(project.updated_at).toLocaleTimeString()}
                 </p>
               </div>
               <div className="flex flex-row flex-wrap jus">
                 {project.topics.map((topic, index) => (
                   <p
                     key={index}
-                    className="p-1 mb-1 text-xs font-thin bg-opacity-5 rounded-2xl select-none hover:font-normal m-[0.063rem] bg-slate-400 dark:bg-slate-900"
+                    className="p-1 mb-1 text-xs font-thin bg-opacity-5 rounded-[6px] select-none hover:font-normal m-[0.063rem] bg-slate-400 dark:bg-slate-900"
                   >
                     {topic}
                   </p>
@@ -139,7 +146,7 @@ const Projects = () => {
             </CardFooter>
           </Card>
         ))}
-    </section>
+    </>
   );
 };
 

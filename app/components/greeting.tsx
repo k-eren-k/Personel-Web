@@ -89,7 +89,7 @@ export default function Greeting() {
         closeDelay={0}
         color="primary"
         isOpen={hovering}
-        className="select-none bg-black bg-opacity-50"
+        className="bg-black bg-opacity-50 select-none"
       >
         {/* Use conditional rendering based on loading state */}
         {greetingData.loading ? (

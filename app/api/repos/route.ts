@@ -35,6 +35,10 @@ export async function GET() {
       created_at: repo.created_at,
       updated_at: repo.updated_at,
       license_name: repo.license?.name,
+      license_url: repo.license?.url,
+      license_key: repo.license?.key,
+      language: repo.language,
+      license_spdx_id: repo.license?.spdx_id,
     }));
 
     return NextResponse.json(repoDetails);

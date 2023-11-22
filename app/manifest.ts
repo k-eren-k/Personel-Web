@@ -2,10 +2,10 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Eren - Web",
-    short_name: "Eren - Web",
+    name: "Eren",
+    short_name: "Eren",
     dir: "auto",
-    description: "This İs My Personal Website. Created With Next.js.",
+    description: "This is my personal website. Created with Next.js.",
     categories: ["personal", "portfolio"],
     theme_color: "#2196f3",
     background_color: "#2196f3",
@@ -13,7 +13,7 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: "/",
     lang: "en-US",
     launch_handler: {
-      url: "https://www.erenk.fun/",
+      url: "https://www.sametcc.me/",
     },
     start_url: "/",
     orientation: "portrait",

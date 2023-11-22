@@ -1,5 +1,5 @@
 module.exports = {
-    siteUrl: "https://sametcc.me/",
+    siteUrl: "https://erenk.fun/",
     generateRobotsTxt: true,
     sitemapSize: 7000,
 }
